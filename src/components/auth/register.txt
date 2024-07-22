@@ -1,0 +1,31 @@
+  {
+    event.preventDefault();
+if (password !== confirmPassword) {
+      alert('Passwords do not match');
+      return;
+    }
+
+   
+    try {
+      // Mock API call to register a new user
+      // Replace with your API endpoint and request
+      const response = await fetch('/api/register', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ username, email, password }),
+      });const handleSubmit = async (event) =>
+
+      if (response.ok) {
+        alert('Registration successful!');
+        navigate('/login'); // Navigate to login page on successful registration
+      } else {
+        alert('Registration failed');
+      }
+    } catch (error) {
+      console.error('Registration error:', error);
+      alert('An error occurred during registration');
+    }
+  };
+  
